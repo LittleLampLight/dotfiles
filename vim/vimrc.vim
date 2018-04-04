@@ -10,8 +10,10 @@
 	aunmenu Help.
 	aunmenu Window.
 	
-	colorscheme gruvbox
-	set background=dark
+	"colorscheme gruvbox
+	"set background=dark
+	"colorscheme github
+	color dracula
 
 	set ruler
 	set completeopt-=preview
@@ -131,11 +133,13 @@
 	Plugin 'rosenfeld/conque-term'      	" Consoles as buffers
 	Plugin 'tpope/vim-surround'	   	" Parentheses, brackets, quotes, XML tags, and more
 	Plugin 'dracula/vim'
+	Plugin 'endel/vim-github-colorscheme'
 	Plugin 'morhetz/gruvbox'
 	Plugin 'vim-syntastic/syntastic'
 	Plugin 'nvie/vim-flake8'
-
-
+	Plugin 'mattn/emmet-vim'
+	Plugin 'scrooloose/nerdcommenter'
+	Plugin 'airblade/vim-gitgutter'
 
 	"--------------=== Snippets support ===---------------
 	Plugin 'garbas/vim-snipmate'		" Snippets manager
@@ -155,11 +159,9 @@
 	filetype plugin on
 	filetype plugin indent on
 
-	" syntastic
-	let g:syntastic_check_on_open = 1
-	" let g:syntastic_auto_loc_list = 1
-	
-	let g:syntastic_python_checkers=['pyflakes']
+	 "syntastic
+	let g:syntastic_python_checkers=['pyflakes', 'flake8']
+	"let g:syntastic_python_checkers=['flake8']
 
 	set statusline+=%#warningmsg#
 	set statusline+=%{SyntasticStatuslineFlag()}
@@ -172,7 +174,7 @@
 
 	syntax on
 
-	autocmd vimenter * NERDTree
+	"autocmd vimenter * NERDTree
 
 	tab sball
 	set switchbuf=useopen
@@ -235,6 +237,7 @@
 	let g:pymode_lint_ignore="E501,W601,C0110"
 	" провека кода после сохранения
 	let g:pymode_lint_write = 1
+	let g:pymode_python = 'python3'
 	
 	" поддержка virtualenv
 	let g:pymode_virtualenv = 1
@@ -261,9 +264,7 @@
 	let g:jedi#popup_select_first = 0
 	let g:jedi#use_tabs_not_buffers = 1
 	let g:jedi#use_splits_not_buffers = "left"
-	let g:jedi#popup_on_dot = 0
-
-
+	let g:jedi#popup_on_dot = 1
 
 
 	"=====================================================
